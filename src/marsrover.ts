@@ -1,4 +1,4 @@
-type Heading = "N" | "W" | "S" | "E";
+type Heading = "N" | "W" | "S" | "E" | String;
 type Coordinates = [x: number, y: number];
 export type Rover = {
   heading: Heading;
@@ -30,6 +30,7 @@ const getNextPosition = (
   if (heading == "E") return [x + 1, y];
   if (heading == "S") return [x, y - 1];
   if (heading == "W") return [x - 1, y];
+  else return position
 };
 
 
@@ -48,6 +49,7 @@ export const apply = (state: ExecuteResult, command: string, maxPos:Coordinates)
   if (command === "L") return turnLeft(state);
   if (command === "R") return turnRight(state);
   if (command === "M") return move(state, maxPos);
+  else return state
 };
 
 export const execute = (commands: string, state: ExecuteResult, maxPos: Coordinates) =>{
@@ -60,7 +62,7 @@ export const execute = (commands: string, state: ExecuteResult, maxPos: Coordina
 }
 
 
-const initialState = (location: string): ExecuteResult => {
+const initialState = (location: String): ExecuteResult => {
   const [x, y, heading] = location.split(" ");
   return {heading, position: [parseInt(x), parseInt(y)], _:"Success"};
 };

@@ -1,26 +1,18 @@
-import { turnLeft, turnRight, move} from './marsrover'
+import {run } from "./marsrover";
 
-test.each`
-original | expected
- ${"N"}  | ${"W"} 
- ${"W"}  | ${"S"} 
- ${"S"}  | ${"E"} 
- ${"E"}  | ${"N"} 
-`
-(
-"when facing original, turning left should turn to $expected",
-({original, expected}) => expect(turnLeft(original)).toBe(expected)
-)
 
-test.each`
-original | expected
- ${"N"}  | ${"E"} 
- ${"E"}  | ${"S"} 
- ${"S"}  | ${"W"} 
- ${"W"}  | ${"N"} 
-`
-(
-"when facing $original, turning right should turn to $expected",
-({original, expected}) => expect(turnRight(original)).toBe(expected)
-)
+test("When executing a program", () => {
+  const program = ["5 5", "1 2 N", "LMLMLMLMM", "3 3 E", "MMRMMRMRRM"];
+  expect(run(program)).toEqual(["1, 3 N", "5 1 E"]);
+});
 
+
+test("When moving west off the edge of the grid", ()=>{
+  const program = ["0 0", "0 0 W", "M"]
+  expect(run(program)).toEqual("F 0 0 W")
+})
+
+test("When moving south off the edge of the grid", ()=>{
+  const program = ["0 0", "0 0 S", "M"]
+  expect(run(program)).toEqual("F 0 0 S")
+})
