@@ -1,9 +1,8 @@
-import MarsRover from './marsrover'
+import MarsRover from './marsrover';
 
-export abstract class Command{
-    constructor(public marsRover = new MarsRover()){
-
+export abstract class Command {
+    constructor(public marsRover = new MarsRover()) {
     }
 
-    abstract execute() : void
+    abstract execute(): void
 }
