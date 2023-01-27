@@ -1,10 +1,10 @@
-                             #Mars Rover Kata
+                             # Mars Rover Kata
 
 
 👾 🚀 You are working in an Engineering Squad for the 🎶 Melody Mars Mission, tasked with designing software to manage robots 🤖 and cool vehicles for space exploration! 👽 🛸🌏
 
- ****INSTRUCTIONS
-
+** ****INSTRUCTIONS
+**********
 The Plateau is divided into a grid. A Rover’s position is represented by x and y co-ordinates and the letters N, S, W, E to represent North, South, West, East (the four cardinal compass points) respectively.
 
 Example
@@ -32,8 +32,8 @@ Rovers move sequentially, this means that the first Rover needs to finish moving
 
 
 
-**Install & Run All tests*****
-
+****Install & Run All tests*****
+******
 npm start
 
 
