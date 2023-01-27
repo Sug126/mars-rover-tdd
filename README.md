@@ -36,6 +36,6 @@ Rovers move sequentially, this means that the first Rover needs to finish moving
 npm start
 
 
-## Run watch-All
+## Run Tests
 
 npm run watch-all
